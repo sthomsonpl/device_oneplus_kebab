@@ -21,10 +21,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from kebab device
 $(call inherit-product, device/oneplus/kebab/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common dotOS stuff.
+$(call inherit-product, vendor/dot/config/common.mk)
 
-PRODUCT_NAME := lineage_kebab
+TARGET_BOOT_ANIMATION_RES := 1080
+EXTRA_FOD_ANIMATIONS := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_SUPPORTS_BLUR := true
+TARGET_INCLUDE_PIXEL_CHARGER := true
+TARGET_GAPPS_ARCH := arm64
+
+# Device identifiers
+PRODUCT_NAME := dot_kebab
 PRODUCT_DEVICE := kebab
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
@@ -35,6 +43,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=OnePlus8T \
     PRODUCT_NAME=OnePlus8T_EEA \
-    PRIVATE_BUILD_DESC="OnePlus8T-user 11   release-keys"
+    PRIVATE_BUILD_DESC="redfin-user 11 RQ3A.210805.001.A1 7474174 release-keys"
 
-BUILD_FINGERPRINT := OnePlus/OnePlus8T_EEA/OnePlus8T:11/RP1A.201005.001/2011101425:user/release-keys
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ3A.210805.001.A1/7474174:user/release-keys
